@@ -1,0 +1,15 @@
+[project]
+name = "traccc-benchmark-bot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.12.*"
+dependencies = [
+    "gitpython>=3.1.44",
+    "pandas>=2.2.3",
+    "pygithub>=2.6.1",
+    "traccc-bench-tools",
+]
+
+[tool.uv.sources]
+traccc-bench-tools = { path = "../benchtraccc/traccc/extras/benchmark", editable = true }
