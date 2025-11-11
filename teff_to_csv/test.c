@@ -102,7 +102,21 @@ int main(int argc, char** argv){
     "completeness",
     "purity",
     "finding_nDuplicated_vs_eta",
-    "finding_nFakeTracks_vs_eta"
+    "finding_nFakeTracks_vs_eta",
+    "res_d0",
+    "res_z0",
+    "res_phi",
+    "res_qop",
+    "res_qopT",
+    "res_qopz",
+    "res_theta",
+    "pull_d0",
+    "pull_z0",
+    "pull_phi",
+    "pull_qop",
+    "pull_qopT",
+    "pull_qopz",
+    "pull_theta"
   };
 
   for (const auto & tree : trees) {
