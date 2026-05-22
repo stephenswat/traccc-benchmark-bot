@@ -1,4 +1,0 @@
-*.bak
-*.csv
-.venv/
-**/__pycache__

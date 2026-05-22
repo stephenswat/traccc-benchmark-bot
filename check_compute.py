@@ -52,8 +52,6 @@ def main():
     assert len(mbl) == 1
     mb = mbl[0]
 
-    cwd = "./benchmark"
-
     file_base = "%d_%s" % (pr_id, pr.head.sha)
 
     subprocess.run(
@@ -74,7 +72,6 @@ def main():
             "/data/Acts/odd-simulations-20240509/geant4_ttbar_mu200",
         ],
         check=True,
-        cwd=cwd,
     )
 
     subprocess.run(
@@ -86,7 +83,6 @@ def main():
             "--threshold=0.0005",
         ],
         check=True,
-        cwd=cwd,
     )
 
     subprocess.run(
@@ -94,7 +90,7 @@ def main():
             "eos",
             "root://eosuser.cern.ch",
             "cp",
-            "file://%s/%s.png" % (os.path.abspath(cwd), file_base),
+            "file://%s/%s.png" % (os.path.abspath("."), file_base),
             "/eos/user/s/sswatman/traccc_bench",
         ],
         check=True,
@@ -105,7 +101,7 @@ def main():
         % (file_base)
     )
 
-    df = pandas.read_csv(cwd + "/%s.csv" % (file_base))
+    df = pandas.read_csv("%s.csv" % (file_base))
 
     df_before = df[df["commit"] == str(mb)]
     df_after = df[df["commit"] == pr.head.sha]

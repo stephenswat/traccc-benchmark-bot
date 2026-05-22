@@ -46,7 +46,7 @@ def main():
         root_to_csv = args.root_to_csv
     else:
         root_to_csv = (
-            pathlib.Path(os.path.abspath(__file__)).parent.parent
+            pathlib.Path(os.path.abspath(__file__)).parent
             / "root_to_csv"
             / "root_to_csv"
         )
