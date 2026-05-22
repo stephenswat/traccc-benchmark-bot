@@ -16,7 +16,6 @@ log = logging.getLogger("traccc_benchmark")
 def run_benchmark(
     source_dir: pathlib.Path,
     data_dir: pathlib.Path,
-    commit,
     gpu_spec: types.GpuSpec,
     parallel: int = 1,
     events: int = 1,
@@ -36,7 +35,7 @@ def run_benchmark(
 
         start_time = time.time()
 
-        build.configure(source_dir, build_dir, commit, cc=cc)
+        build.configure(source_dir, build_dir, cc=cc)
 
         end_time = time.time()
 
@@ -62,7 +61,6 @@ def run_benchmark(
         profile.run_profile(
             build_dir,
             data_dir=data_dir,
-            commit=commit,
             events=events,
             ncu_wrapper=ncu_wrapper,
         )

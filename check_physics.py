@@ -28,14 +28,12 @@ CACHE_DIR = pathlib.Path("/mnt/ssd1/sswatman/traccc-physics-cache")
 def build(tmpdirname, src_dir, local_repo, commit_hash):
     log.info("Building repository for commit %s...", commit_hash)
 
-    commit = local_repo.commit(commit_hash)
-
     local_repo.git.checkout(commit_hash)
 
     log.info("Building into temporary directory %s", tmpdirname)
 
     log.info("Running configuration step...")
-    traccc_bench_tools.build.configure(src_dir, tmpdirname, commit, root=True)
+    traccc_bench_tools.build.configure(src_dir, tmpdirname, root=True)
     log.info("Running build step...")
 
     build_args = [

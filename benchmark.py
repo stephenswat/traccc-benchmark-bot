@@ -228,7 +228,6 @@ def main(argv=None):
             result_df = benchmark.run_benchmark(
                 source_dir=args.repo,
                 data_dir=args.data,
-                commit=x,
                 gpu_spec=types.GpuSpec(
                     getattr(args, "num_sm"), getattr(args, "num_threads_per_sm")
                 ),
