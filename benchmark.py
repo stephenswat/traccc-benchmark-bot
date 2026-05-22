@@ -25,7 +25,7 @@ KNOWN_BROKEN_COMMITS = [
 ]
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
@@ -115,7 +115,7 @@ def main():
         dest="ncu_wrapper",
     )
 
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     logging.basicConfig(
         level=logging.DEBUG if (args.verbose or False) else logging.INFO,

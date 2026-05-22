@@ -6,6 +6,9 @@ import sys
 import pandas
 import numpy
 
+import benchmark
+import plot
+
 
 def render_time(t):
     if numpy.isnan(t):
@@ -54,10 +57,8 @@ def main():
 
     file_base = "%d_%s" % (pr_id, pr.head.sha)
 
-    subprocess.run(
+    benchmark.main(
         [
-            "python",
-            "benchmark.py",
             "--ncu-wrapper",
             "gpu_lock A5000",
             "--cc=86",
@@ -70,19 +71,15 @@ def main():
             "/mnt/ssd1/sswatman/benchtraccc/traccc_subject",
             "%s.csv" % (file_base),
             "/data/Acts/odd-simulations-20240509/geant4_ttbar_mu200",
-        ],
-        check=True,
+        ]
     )
 
-    subprocess.run(
+    plot.main(
         [
-            "python",
-            "plot.py",
             "%s.csv" % (file_base),
             "%s.png" % (file_base),
             "--threshold=0.0005",
-        ],
-        check=True,
+        ]
     )
 
     subprocess.run(

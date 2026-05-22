@@ -12,7 +12,7 @@ from datetime import datetime
 log = logging.getLogger("traccc_plot")
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
@@ -34,7 +34,7 @@ def main():
         default=0.001,
     )
 
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     logging.basicConfig(
         level=logging.INFO,
