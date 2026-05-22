@@ -12,10 +12,4 @@ dependencies = [
     "pandas>=2.2.3",
     "pygithub>=2.6.1",
     "scipy>=1.16.3",
-    "traccc-bench-tools",
-    "traccc-physics-plots",
 ]
-
-[tool.uv.sources]
-traccc-bench-tools = { path = "./benchmark", editable = true }
-traccc-physics-plots = { path = "./physics_plots", editable = true }
