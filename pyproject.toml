@@ -7,11 +7,15 @@ requires-python = "==3.12.*"
 dependencies = [
     "black>=25.11.0",
     "gitpython>=3.1.44",
+    "matplotlib>=3.10.5",
+    "numpy>=2.2.4",
     "pandas>=2.2.3",
     "pygithub>=2.6.1",
     "scipy>=1.16.3",
     "traccc-bench-tools",
+    "traccc-physics-plots",
 ]
 
 [tool.uv.sources]
-traccc-bench-tools = { path = "../benchtraccc/traccc/extras/benchmark", editable = true }
+traccc-bench-tools = { path = "./benchmark", editable = true }
+traccc-physics-plots = { path = "./physics_plots", editable = true }

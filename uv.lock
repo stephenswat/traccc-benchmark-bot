@@ -524,7 +524,7 @@ wheels = [
 [[package]]
 name = "traccc-bench-tools"
 version = "0.0.1"
-source = { editable = "../benchtraccc/traccc/extras/benchmark" }
+source = { editable = "benchmark" }
 dependencies = [
     { name = "gitpython" },
     { name = "matplotlib" },
@@ -548,21 +548,49 @@ source = { virtual = "." }
 dependencies = [
     { name = "black" },
     { name = "gitpython" },
+    { name = "matplotlib" },
+    { name = "numpy" },
     { name = "pandas" },
     { name = "pygithub" },
     { name = "scipy" },
     { name = "traccc-bench-tools" },
+    { name = "traccc-physics-plots" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "black", specifier = ">=25.11.0" },
     { name = "gitpython", specifier = ">=3.1.44" },
+    { name = "matplotlib", specifier = ">=3.10.5" },
+    { name = "numpy", specifier = ">=2.2.4" },
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "pygithub", specifier = ">=2.6.1" },
     { name = "scipy", specifier = ">=1.16.3" },
-    { name = "traccc-bench-tools", editable = "../benchtraccc/traccc/extras/benchmark" },
+    { name = "traccc-bench-tools", editable = "benchmark" },
+    { name = "traccc-physics-plots", editable = "physics_plots" },
 ]
+
+[[package]]
+name = "traccc-physics-plots"
+version = "0.1.0"
+source = { editable = "physics_plots" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "scipy" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "matplotlib", specifier = ">=3.10.5" },
+    { name = "numpy", specifier = ">=2.2.4" },
+    { name = "pandas", specifier = ">=2.2.3" },
+    { name = "scipy", specifier = ">=1.16.3" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "black", specifier = ">=25.12.0" }]
 
 [[package]]
 name = "typing-extensions"
