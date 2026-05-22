@@ -52,7 +52,7 @@ def main():
     assert len(mbl) == 1
     mb = mbl[0]
 
-    cwd = "/mnt/ssd1/sswatman/benchtraccc/traccc/extras/benchmark"
+    cwd = "./benchmark"
 
     file_base = "%d_%s" % (pr_id, pr.head.sha)
 
