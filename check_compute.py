@@ -94,7 +94,7 @@ def main():
             "eos",
             "root://eosuser.cern.ch",
             "cp",
-            "file://%s/%s.png" % (cwd, file_base),
+            "file://%s/%s.png" % (os.path.abspath(cwd), file_base),
             "/eos/user/s/sswatman/traccc_bench",
         ],
         check=True,
